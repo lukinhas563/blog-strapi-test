@@ -11,7 +11,10 @@ export type DynamicPostProps = {
 export default function DynamicPost({ post }: DynamicPostProps) {
     return (
         <>
-            <p>{post.attributes.title}</p>
+            <h2>{post.attributes.title}</h2>
+            <p
+                dangerouslySetInnerHTML={{ __html: post.attributes.content }}
+            ></p>
         </>
     );
 }
