@@ -3,7 +3,7 @@ import Image from 'next/image';
 import * as Styled from './styled';
 
 export type PostCardProps = {
-    slug: string;
+    slug: number;
     title: string;
     cover: string;
     imageWidth: number;
@@ -20,7 +20,7 @@ export function PostCard({
     return (
         <Styled.Container>
             <Styled.PostCardCover>
-                <Link href={'/'}>
+                <Link href={`/post/${slug}`}>
                     <Image
                         src={cover}
                         width={imageWidth}
@@ -31,7 +31,7 @@ export function PostCard({
             </Styled.PostCardCover>
 
             <Styled.PostCardHeading>
-                <Link href={'/'}>{title}</Link>
+                <Link href={`/post/${slug}`}>{title}</Link>
             </Styled.PostCardHeading>
         </Styled.Container>
     );

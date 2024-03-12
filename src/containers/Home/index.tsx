@@ -22,7 +22,7 @@ export default function HomePage({ posts }: HomePageProps) {
                                 post.attributes.cover.data.attributes.formats
                                     .small.url
                             }
-                            slug={post.attributes.slug}
+                            slug={post.id}
                             title={post.attributes.title}
                             imageWidth={
                                 post.attributes.cover.data.attributes.formats

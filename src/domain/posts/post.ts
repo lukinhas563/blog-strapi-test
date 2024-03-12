@@ -80,3 +80,17 @@ export type Post = {
     id: PostID;
     attributes: PostData;
 };
+
+export type MetaData = {
+    pagination: {
+        page: number;
+        pageSize: number;
+        pageCount: number;
+        total: number;
+    };
+};
+
+export type Data = {
+    data: Post;
+    meta: MetaData;
+};
