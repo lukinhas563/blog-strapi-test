@@ -1,36 +1,21 @@
-import { Post, PostData } from '@/domain/posts/post';
-import { useEffect, useState } from 'react';
+import HomePage from '@/containers/Home';
+import { getAllPosts } from '@/data/posts/get-all-posts';
+import { Post } from '@/domain/posts/post';
 
 export type HomeProps = {
     posts: Post[];
 };
 
-const getPosts = async (): Promise<Post[]> => {
-    const posts = await fetch(
-        'https://strapi-test-ocrw.onrender.com/api/posts?populate=*',
-    );
-    const jsonPosts = await posts.json();
-
-    return jsonPosts.data;
-};
-
 export default function Home({ posts }: HomeProps) {
     return (
         <>
-            <h1>Hello World</h1>
-            <div>
-                {posts.map((post) => (
-                    <div key={post.id}>
-                        <h2>{post.attributes.title}</h2>
-                    </div>
-                ))}
-            </div>
+            <HomePage posts={posts} />
         </>
     );
 }
 
 export async function getStaticProps() {
-    const posts = await getPosts();
+    const posts = await getAllPosts();
 
     return {
         props: { posts },
