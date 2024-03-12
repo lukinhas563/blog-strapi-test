@@ -2,6 +2,7 @@ import { getAllPosts } from '@/data/posts/get-all-posts';
 import { getPost } from '@/data/posts/get-post';
 import { Post } from '@/domain/posts/post';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import PostPage from '@/containers/Post';
 import { notFound } from 'next/navigation';
 
 export type DynamicPostProps = {
@@ -9,14 +10,7 @@ export type DynamicPostProps = {
 };
 
 export default function DynamicPost({ post }: DynamicPostProps) {
-    return (
-        <>
-            <h2>{post.attributes.title}</h2>
-            <p
-                dangerouslySetInnerHTML={{ __html: post.attributes.content }}
-            ></p>
-        </>
-    );
+    return <PostPage post={post} />;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
