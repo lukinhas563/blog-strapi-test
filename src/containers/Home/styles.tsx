@@ -1,5 +1,3 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
-    background-color: rebeccapurple;
-`;
+export const Container = styled.section``;
