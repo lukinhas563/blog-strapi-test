@@ -1,21 +1,27 @@
 export type PostID = number;
 
 export type PostAuthor = {
-    id: PostID;
-    name: string;
-    created_by: number;
-    updated_by: number;
-    created_at: string;
-    updated_at: string;
+    data: {
+        attributes: {
+            name: string;
+            publishedAt: string;
+            createdAt: string;
+            updatedAt: string;
+        };
+        id: PostID;
+    };
 };
 
 export type PostCategory = {
-    id: PostID;
-    name: string;
-    created_by: number;
-    updated_by: number;
-    created_at: string;
-    updated_at: string;
+    data: {
+        attributes: {
+            name: string;
+            publishedAt: string;
+            createdAt: string;
+            updatedAt: string;
+        };
+        id: PostID;
+    };
 };
 
 export type PostCreatedBy = {

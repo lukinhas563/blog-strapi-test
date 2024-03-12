@@ -14,7 +14,7 @@ export default function PostDetails({
 }: PostDetailsProps) {
     return (
         <Container>
-            Publicado por <Date date={date} />
+            Publicado em <Date date={date} /> por {author} | {category}
         </Container>
     );
 }
