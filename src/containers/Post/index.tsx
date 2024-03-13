@@ -7,6 +7,7 @@ import Heading from '@/components/Post-heading';
 import { Post } from '@/domain/posts/post';
 import PostDetails from '@/components/Post-deails';
 import PostContainer from '@/components/Post-container';
+import Comments from '@/coments';
 
 export type PostProps = {
     post: Post;
@@ -30,6 +31,10 @@ export default function PostPage({ post }: PostProps) {
                     date={post.attributes.createdAt}
                 />
                 <PostContainer content={post.attributes.content} />
+                <Comments
+                    slug={post.id.toString()}
+                    title={post.attributes.title}
+                />
             </MainContainr>
             <Footer />
         </>
