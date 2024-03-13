@@ -97,6 +97,6 @@ export type MetaData = {
 };
 
 export type Data = {
-    data: Post;
+    data: Post[];
     meta: MetaData;
 };
