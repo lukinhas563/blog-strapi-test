@@ -3,7 +3,6 @@ import { getPost } from '@/data/posts/get-post';
 import { Post } from '@/domain/posts/post';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import PostPage from '@/containers/Post';
-import { notFound } from 'next/navigation';
 
 export type DynamicPostProps = {
     post: Post;
