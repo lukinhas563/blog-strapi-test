@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Heading from '@/components/Post-heading';
 import { Post } from '@/domain/posts/post';
 import PostDetails from '@/components/Post-deails';
+import PostContainer from '@/components/Post-container';
 
 export type PostProps = {
     post: Post;
@@ -28,11 +29,7 @@ export default function PostPage({ post }: PostProps) {
                     category={post.attributes.category.data.attributes.name}
                     date={post.attributes.createdAt}
                 />
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: post.attributes.content,
-                    }}
-                />
+                <PostContainer content={post.attributes.content} />
             </MainContainr>
             <Footer />
         </>
