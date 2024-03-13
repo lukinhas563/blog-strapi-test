@@ -100,3 +100,7 @@ export type Data = {
     data: Post[];
     meta: MetaData;
 };
+export type UniqueData = {
+    data: Post;
+    meta: MetaData;
+};
